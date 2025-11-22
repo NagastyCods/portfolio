@@ -4,6 +4,32 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('.nav-link');
     const contactForm = document.getElementById('contactForm');
     const formStatus = document.getElementById('formStatus');
+    const fasHovers = document.querySelectorAll('.fas');
+    const projectCards= document.querySelectorAll('.project-card');
+
+    projectCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            const viewProject = this.querySelector('.view-project');  
+            if (viewProject) {
+                viewProject.style.display = 'block';
+            }
+        });
+        card.addEventListener('mouseleave', function() {
+            const viewProject = this.querySelector('.view-project');
+            if (viewProject) {
+                viewProject.style.display = 'none';
+            }
+        });
+    });
+
+    fasHovers.forEach(icon => {
+        icon.addEventListener('mouseenter', function() {
+            this.style.color = '#ff6f61';
+        });
+        icon.addEventListener('mouseleave', function() {
+            this.style.color = '';
+        });
+    });
 
     navToggle.addEventListener('click', function() {
         navMenu.classList.toggle('active');

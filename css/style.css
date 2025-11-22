@@ -289,6 +289,16 @@ body {
     font-size: 4rem;
     color: rgba(255, 255, 255, 0.5);
 }
+.view-project {
+    display: none;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+.placeholder-image .view-project .btn {
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+}
 
 .project-info {
     padding: 1.5rem;
