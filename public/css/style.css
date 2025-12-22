@@ -256,7 +256,26 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 }
-
+/* key features */
+.key-features {
+    display: none;
+    padding: 2rem 0;
+    background-color: var(--bg-light);
+}
+.key-features h4{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+.key-features ul{
+    list-style: disc;
+    padding-left: 1.5rem;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+.key-features ul li{
+    margin-bottom: 0.5rem;
+}
 .project-card {
     background-color: var(--bg-white);
     border-radius: 12px;
@@ -268,6 +287,23 @@ body {
 .project-card:hover {
     transform: translateY(-8px);
     box-shadow: var(--shadow-lg);
+}
+/* see more/less buttons */
+
+#seeMore {
+    display: block;
+    margin-top: 10px;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: background-color 0.3s ease;
+}
+#seeMore:hover {
+    background-color: var(--secondary-color);
 }
 
 .project-image {
@@ -289,16 +325,6 @@ body {
     font-size: 4rem;
     color: rgba(255, 255, 255, 0.5);
 }
-.view-project {
-    display: none;
-    position: absolute;
-    bottom: 15px;
-    right: 15px;
-}
-.placeholder-image .view-project .btn {
-    font-size: 0.875rem;
-    padding: 0.5rem 1rem;
-}
 
 .project-info {
     padding: 1.5rem;
@@ -318,7 +344,6 @@ body {
 }
 
 .project-tags {
-    display: flex;
     gap: 0.5rem;
     flex-wrap: wrap;
 }
@@ -330,6 +355,42 @@ body {
     border-radius: 20px;
     font-size: 0.875rem;
     font-weight: 500;
+}
+/* why choose me */
+.why-choose-me {
+    padding: 6rem 0;
+    background-color: var(--bg-light);
+}
+.chooseMe-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+
+}
+.chooseMe-item {
+    background-color: var(--bg-white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.chooseMe-item h3{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+.chooseMe-item i{
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+.chooseMe-item p{
+    color: var(--text-light);
+    line-height: 1.6;
+}
+.chooseMe-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
 }
 
 .contact {
@@ -537,6 +598,10 @@ body {
     .projects-grid {
         grid-template-columns: 1fr;
     }
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+    
 }
 
 @media (max-width: 480px) {
@@ -552,5 +617,11 @@ body {
     .btn {
         width: 100%;
         max-width: 250px;
+    }
+    .project-tags{
+        display: inline-flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.5rem;
     }
 }

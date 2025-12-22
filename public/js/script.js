@@ -6,21 +6,32 @@ document.addEventListener('DOMContentLoaded', function() {
     const formStatus = document.getElementById('formStatus');
     const fasHovers = document.querySelectorAll('.fas');
     const projectCards= document.querySelectorAll('.project-card');
-
-    projectCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            const viewProject = this.querySelector('.view-project');  
-            if (viewProject) {
-                viewProject.style.display = 'block';
-            }
-        });
-        card.addEventListener('mouseleave', function() {
-            const viewProject = this.querySelector('.view-project');
-            if (viewProject) {
-                viewProject.style.display = 'none';
-            }
-        });
+    const seeMoreBtn = document.getElementsByClassName('seeMore1');
+    const seeMoreBtn2 = document.getElementsByClassName('seeMore2');
+    
+    seeMoreBtn[0].addEventListener('click', function(e) {
+        e.preventDefault();
+        const keyFeatures = document.getElementById('keyFeatures1');
+        if (keyFeatures.style.display === 'block') {
+            keyFeatures.style.display = 'none';
+            this.textContent = ' see more';
+        } else {
+            keyFeatures.style.display = 'block';
+            this.textContent = ' see less';
+        }
     });
+    seeMoreBtn2[0].addEventListener('click', function(e) {
+        e.preventDefault();
+        const keyFeatures = document.getElementById('keyFeatures2');
+        if (keyFeatures.style.display === 'block') {
+            keyFeatures.style.display = 'none';
+            this.textContent = ' see more';
+        } else {
+            keyFeatures.style.display = 'block';
+            this.textContent = ' see less';
+        }
+    });
+
 
     fasHovers.forEach(icon => {
         icon.addEventListener('mouseenter', function() {
